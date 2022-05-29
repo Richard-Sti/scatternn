@@ -2,7 +2,7 @@
 
 Ensemble of neural networks with a Gaussian loss function that predict both the mean predicted value and the uncertainty around that mean. See [``./tutorial/tutorial_GaussianLossNN.ipynb``](https://github.com/Richard-Sti/empiricalgalo/blob/master/tutorials/tutorial_GaussianLossNN.ipynb) for an example.
 
-If you use or find useful any of the code implemented in this please cite [1].
+If you use or find useful any of the code implemented here please cite [1].
 
 
 
