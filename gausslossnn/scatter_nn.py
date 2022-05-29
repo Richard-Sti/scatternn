@@ -66,19 +66,19 @@ class GaussianLossNN:
         Network weights initialiser, by default `LecunNormal`. Alternatively
         can be picked from Tensorflow's selection of initialisers.
     adv_multiplier: float, optinal
-        Multiplier to adversarial regularization loss. By default 0.2.
+        Multiplier to adversarial regularization loss. By default 0.5.
     adv_step: float, optional
         Step size to find the adversarial sample. By default to 0.001.
     pgd_iters: int, optional
         Nnumber of attack iterations for Projected Gradient Descent (PGD)
-        attack. Defaults to 3.
+        attack. Defaults to 1.
     seed: int, optional
         Random seed for setting the initial weights.
     """
     def __init__(self, Ninputs, checkpoint_dir,
                  deep_layers=[16, 16, 16, 16, 8], activation="selu",
-                 initializer="LecunNormal", adv_multiplier=0.2, adv_step=0.001,
-                 pgd_iters=3, seed=None):
+                 initializer="LecunNormal", adv_multiplier=0.5, adv_step=0.001,
+                 pgd_iters=1, seed=None):
         # Initialise the model
         self.model, self.adv_model = self._make_model(
             Ninputs, deep_layers, activation, initializer, adv_multiplier,
