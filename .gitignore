@@ -1,0 +1,10 @@
+/test_*
+*.pyc
+tutorials/halos.npy
+.DS_Store
+*-checkpoint.ipynb
+tutorials/smf.npy
+*.whl
+empiricalgalo.egg-info/*
+build/*
+checkpoints/
