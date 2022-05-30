@@ -20,7 +20,7 @@ with open('README.md', "r") as fh:
     long_description = fh.read()
 
 # get version
-with open("gausslossnn/_version.py", "r") as fh:
+with open("scatternn/_version.py", "r") as fh:
     vstr = fh.read().strip()
 try:
     vstr = vstr.split('=')[1].strip()
@@ -36,11 +36,11 @@ requirements.split("\n")
 version = vstr.replace("'", "").replace('"', "")
 
 setup(
-    name='GaussLossNN',
+    name='ScatterNN',
     version=version,
-    description='NN with a Gaussian loss function.',
+    description='An ensemble of neural networks for probabilistic regression',
     long_description=long_description,
-    url='https://github.com/Richard-Sti/empiricalgalo',
+    url='https://github.com/Richard-Sti/scatternn',
     author='Richard Stiskalek',
     author_email='richard.stiskalek@protonmail.com',
     license='GPL-3.0',

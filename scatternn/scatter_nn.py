@@ -32,13 +32,13 @@ import joblib
 #
 # =============================================================================
 #
-#                           Gaussian loss NN
+#                               Scatter NN
 #
 # =============================================================================
 #
 
 
-class GaussianLossNN:
+class ScatterNN:
     """
     An adversarial neural network 1-dimensional regressor with a Gaussian
     loss function that predicts both a mean and a standard deviation.
@@ -358,7 +358,7 @@ class GaussianLossNN:
 
         Returns
         -------
-        network: :py:class:`GaussianLossNN`
+        network: :py:class:`ScatterNN`
             The initialised model with loaded weights.
         """
         params = joblib.load(os.path.join(checkpoint_dir, "params.p"))
@@ -390,7 +390,7 @@ class GaussianLossNN:
         seed: int, optional
             Random seed for setting the initial weights.
         model_kwargs: dict
-            Kwargs passed into :py:class:`GaussianLossNN`, except `Ninputs` and
+            Kwargs passed into :py:class:`ScatterNN`, except `Ninputs` and
             `checkpoint_dir`.
         optimizer: keras optimizer, optional
             Optimizer to train the network. By default `adamax` with default TF
@@ -405,7 +405,7 @@ class GaussianLossNN:
 
         Returns
         -------
-        network: :py:class:`GaussianLossNN`
+        network: :py:class:`ScatterNN`
             The trained model.
         """
         # Deepcopy the kwargs
@@ -433,7 +433,7 @@ class GaussianLossNN:
 #
 # =============================================================================
 #
-#                       Gaussian loss NN utilities
+#                           Scatter NN utilities
 #
 # =============================================================================
 #
@@ -492,9 +492,9 @@ def get_random_seeds(N, seed):
     return seeds
 
 
-class SummaryEnsembleGaussianLossNN:
+class SummaryEnsembleScatterNN:
     """
-    Summary class for an ensemble of :py:class:`GaussianLossNN` models.
+    Summary class for an ensemble of :py:class:`ScatterNN` models.
 
     Contains functionalities for checkings their convergence, ensemble
     predictions, ensemble scores and ensemble gradients of the predictions
@@ -506,7 +506,7 @@ class SummaryEnsembleGaussianLossNN:
 
         print("Found {} models in `{}`."
               .format(len(cdirs), base_checkpoint_dir))
-        self._models = [GaussianLossNN.from_checkpoint(cdir, optimizer)
+        self._models = [ScatterNN.from_checkpoint(cdir, optimizer)
                         for cdir in cdirs]
 
     @property

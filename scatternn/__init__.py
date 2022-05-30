@@ -21,5 +21,5 @@ from .scatter import (BinningAssignment, BivariateGaussianScatterPosterior)
 from .R2ordering import incremental_importance, parse_data
 from .preprocess import DataFrameSelector, stratify_split, apply_preprocess
 
-from .scatter_nn import (GaussianLossNN, make_checkpoint_dirs,
-                         SummaryEnsembleGaussianLossNN, get_random_seeds)
+from .scatter_nn import (ScatterNN, make_checkpoint_dirs,
+                         SummaryEnsembleScatterNN, get_random_seeds)
